@@ -2,6 +2,7 @@
 apt-get update
 apt-get upgrade -y
 apt-get install wget
+apt install net-tools
 apt-get install unzip -y
 apt-get install unzip default-jre mysql-server -y
 / Not required in actual script
@@ -48,6 +49,7 @@ cat > /opt/traccar/conf/traccar.xml << EOF
 </properties>
 EOF
 service traccar start
+clear
 echo "You can login via following IP address to your Traccar platform with following login info:"
 ifconfig eth0 | grep "inet " | awk '{gsub("addr:","",$2);  print $2 }'
 echo "Email: admin"
