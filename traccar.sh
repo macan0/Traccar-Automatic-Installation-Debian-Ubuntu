@@ -26,9 +26,9 @@ expect eof
 ")
 
 echo "$SECURE_MYSQL"
- mysql -u root -pabcd1234 -e "create database new_d"
-  mysql -u root -pabcd1234 -e "CREATE USER 'traccar1'@'localhost' IDENTIFIED BY '!Traccar321'"
-  mysql -u root -pabcd1234 -e "GRANT ALL PRIVILEGES ON new_d.* TO traccar1@localhost"
+ mysql -u root -p!Traccar321 -e "create database new_d"
+  mysql -u root -p!Traccar321 -e "CREATE USER 'traccar1'@'localhost' IDENTIFIED BY '!Traccar321'"
+  mysql -u root -p!Traccar321 -e "GRANT ALL PRIVILEGES ON new_d.* TO traccar1@localhost"
 wget https://www.traccar.org/download/traccar-linux-64-latest.zip
 unzip traccar-linux-*.zip && ./traccar.run
 cat > /opt/traccar/conf/traccar.xml << EOF
